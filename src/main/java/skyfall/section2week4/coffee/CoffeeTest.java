@@ -1,9 +1,12 @@
 package skyfall.section2week4.coffee;
 
+import skyfall.section2week4.DependencyConfig;
+import skyfall.section2week4.member.MemberService;
+
 public class CoffeeTest {
     public static void main(String[] args) {
-        CoffeeService coffeeService = new CoffeeService();
-
+        DependencyConfig dependencyConfig = new DependencyConfig();
+        CoffeeService coffeeService = dependencyConfig.coffeeService();
         Coffee coffee = new Coffee(0L,"바닐라 라떼","vanilla latte", 5000);
         coffeeService.createCoffee(coffee);
 

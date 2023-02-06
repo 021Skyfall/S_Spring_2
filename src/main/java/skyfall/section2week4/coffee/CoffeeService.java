@@ -1,7 +1,11 @@
 package skyfall.section2week4.coffee;
 
 public class CoffeeService {
-    CoffeeRepository coffeeRepository = new CoffeeRepository();
+    CoffeeRepository coffeeRepository;
+
+    public CoffeeService(CoffeeRepository coffeeRepository) {
+        this.coffeeRepository = coffeeRepository;
+    }
 
     public void createCoffee(Coffee coffee) {
         coffeeRepository.postCoffee(coffee);
