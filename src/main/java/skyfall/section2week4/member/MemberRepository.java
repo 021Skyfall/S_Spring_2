@@ -1,10 +1,13 @@
 package skyfall.section2week4.member;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
 // 해쉬맵 형태로
 // 가입, 조회, 삭제 기능 구현
+@Component
 public class MemberRepository {
     private static Map<Long, Member> members = new HashMap<>();
 

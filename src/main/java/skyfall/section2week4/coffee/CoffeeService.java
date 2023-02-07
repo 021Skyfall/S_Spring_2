@@ -1,8 +1,14 @@
 package skyfall.section2week4.coffee;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+// 애너테이션 추가
+@Component
 public class CoffeeService {
     CoffeeRepository coffeeRepository;
 
+    @Autowired
     public CoffeeService(CoffeeRepository coffeeRepository) {
         this.coffeeRepository = coffeeRepository;
     }

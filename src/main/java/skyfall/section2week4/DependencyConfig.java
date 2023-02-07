@@ -1,7 +1,9 @@
 package skyfall.section2week4;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import skyfall.section2week4.coffee.CoffeeRepository;
 import skyfall.section2week4.coffee.CoffeeService;
 import skyfall.section2week4.member.MemberRepository;
@@ -31,24 +33,30 @@ import skyfall.section2week4.member.MemberService;
 //        return new CoffeeService(coffeeRepository());
 //    }
 
-    // 싱글톤 컨테이너 적용
-@Configuration
-public class DependencyConfig {
-    @Bean
-    public MemberRepository memberRepository() {
-        return new MemberRepository();
-    }
-    @Bean
-    public MemberService memberService() {
-        return new MemberService(memberRepository());
-    }
-    @Bean
-    public CoffeeRepository coffeeRepository() {
-        return new CoffeeRepository();
-    }
-    @Bean
-    public CoffeeService coffeeService() {
-        return new CoffeeService(coffeeRepository());
-    }
+//// 싱글톤 컨테이너 적용
+//// Configuration
+//@Configuration
+//public class DependencyConfig {
+//    @Bean
+//    public MemberRepository memberRepository() {
+//        return new MemberRepository();
+//    }
+//    @Bean
+//    public MemberService memberService() {
+//        return new MemberService(memberRepository());
+//    }
+//    @Bean
+//    public CoffeeRepository coffeeRepository() {
+//        return new CoffeeRepository();
+//    }
+//    @Bean
+//    public CoffeeService coffeeService() {
+//        return new CoffeeService(coffeeRepository());
+//    }
+//}
+//// 기존 코드에서 애너테이션 추가
+
+// ComponentScan
+@ComponentScan
+ public class DependencyConfig {
 }
-// 기존 코드에서 애너테이션 추가
